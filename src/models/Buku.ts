@@ -3,9 +3,10 @@ import database from "../database/database";
 
 class Buku extends Model {
     public id!: number;
-    public userid!: String;
-    public title!: String;
-    public author!: String;
+    public userid!: string;
+    public title!: string;
+    public author!: string;
+    public imageUrl!: string;
 }
 
 Buku.init(
@@ -27,6 +28,10 @@ Buku.init(
         author: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        imageUrl: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
     },
     {
@@ -34,7 +39,7 @@ Buku.init(
         tableName: "buku"
     }
 ).sync()
-.then(() => console.log("Buku model synced successfully."))
-.catch((error: any) => console.error(`Error syncing Buku model: ${error.message}`));
+    .then(() => console.log("Buku model synced successfully."))
+    .catch((error: any) => console.error(`Error syncing Buku model: ${error.message}`));
 
 export default Buku;

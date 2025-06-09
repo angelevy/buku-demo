@@ -3,9 +3,9 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const dbname = process.env.DBNAME || "default_db";
-const dbuser = process.env.DBUSER || "default_user";
-const dbpassword = process.env.DBPASSWORD || "default_password";
+const dbname = process.env.DBNAME || "bukuapi";
+const dbuser = process.env.DBUSER || "root";
+const dbpassword = process.env.DBPASSWORD || "";
 const database = new Sequelize(dbname, dbuser, dbpassword, {
   dialect: "mysql"
 })

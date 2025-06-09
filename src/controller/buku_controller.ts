@@ -61,10 +61,14 @@ const BukuController = {
       // "https://balblaba.com/public/images/aslfjskdfjka.jpg";
       const baseUrl = `${req.protocol}://${req.get("host")}`;
       const imageUrl = `${baseUrl}/public/images/${req.file.filename}`; // Penting untuk disesuaikan dengan direktori yang diinginkan
+      const { title, author } = req.body;
+      const userid = req.body.userid; // Ambil dari form-data
 
       const buku = await Buku.create({
-        ...req.body,
-        imageUrl: imageUrl,
+        userid,
+        title,
+        author,
+        imageUrl,
       })
 
       return res.status(201).json({
@@ -113,7 +117,7 @@ const BukuController = {
       })
     }
   },
-  destory: async (req: Request, res: Response) => {
+  destroy: async (req: Request, res: Response) => {
     try {
       // "https://balblaba.com/bukus/1";
       const bukuId = req.params.id // 1

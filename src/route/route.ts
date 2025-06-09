@@ -9,6 +9,6 @@ router.get("/bukus", BukuController.index);
 router.get("/buku/:id", BukuController.show)
 router.post("/buku", upload.single("image"), BukuController.store);
 router.put("/buku/:id", upload.single("image"), BukuController.update);
-router.delete("/buku/:id", BukuController.destory);
+router.delete("/buku/:id", BukuController.destroy);
 
 export default router;
