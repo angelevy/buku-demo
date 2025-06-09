@@ -35,5 +35,6 @@ Buku.init(
     }
 ).sync()
 .then(() => console.log("Buku model synced successfully."))
-.catch((error: any) => console.error(`Error sycing Buku model: ${error.message}`));
+.catch((error: any) => console.error(`Error syncing Buku model: ${error.message}`));
+
 export default Buku;
